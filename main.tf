@@ -8,24 +8,6 @@ resource "random_id" "uid" {
   byte_length = 4
 }
 
-#module "vpc" {
-#    source = "terraform-aws-modules/vpc/aws"
-#    name   = var.showName
-#    cidr   = var.cidr
-#    azs    = ["${var.region}a", "${var.region}b"]
-#
-#    intra_subnets = [cidrsubnet(var.cidr, 1, 0), cidrsubnet(var.cidr, 1, 1)]
-#
-#    enable_s3_endpoint       = false
-#    enable_dynamodb_endpoint = false
-#    enable_dns_hostnames     = false
-#    enable_dhcp_options      = false
-#
-#    tags = {
-#      Name = "snowpov"
-#    }
-#}
-
 resource "tls_private_key" "this" {
   algorithm = "RSA"
   rsa_bits  = 4096
