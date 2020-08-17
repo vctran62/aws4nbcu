@@ -8,6 +8,6 @@ variable instance_size      {}
 variable os                 {}
 
 locals {
-    instance_type = "t3.small"
-    ami = "server2019"
+    instance_type = var.instance_size == "small"
+    ami = var.os == "server2019"
     }
