@@ -1,25 +1,19 @@
 data "aws_ami" "latest_ubuntu" {
   most_recent = true
+  owners      = ["330946098119"]
+
   filter {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
-  }
-  filter {
-    name = "owners"
-    values = ["099720109477"]
   }
 }
 
 data "aws_ami" "latest_amazon_windows_2019" {
   most_recent = true
-  
+  owners      = ["amazon"]
+
   filter {
     name   = "name"
     values = ["Windows_Server-2019-English-Full-Base-*"]
-  }
-  
-  filter {
-    name = "owners"
-    values = ["amazon"]
   }
 }
